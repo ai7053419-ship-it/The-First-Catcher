@@ -1,0 +1,426 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 15px;
+  background: radial-gradient(circle, #172c58, #050817);
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  color: #ffe45c;
+  font-size: 30px;
+  text-shadow: 0 0 15px gold;
+}
+
+#info {
+  display: flex;
+  justify-content: space-around;
+  font-size: 21px;
+  color: #00ffff;
+  margin: 20px auto;
+  max-width: 500px;
+}
+
+#game {
+  height: 380px;
+  max-width: 500px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #101c55, #174b88);
+  border: 3px solid #00eaff;
+  border-radius: 18px;
+  box-shadow: 0 0 25px #00d9ff;
+}
+
+#basket {
+  position: absolute;
+  bottom: 10px;
+  left: 45%;
+  font-size: 48px;
+  filter: drop-shadow(0 0 10px gold);
+}
+
+#controls {
+  margin: 20px;
+}
+
+button {
+  padding: 14px 23px;
+  margin: 5px;
+  border: 2px solid #00eaff;
+  border-radius: 12px;
+  background: linear-gradient(45deg, #123b80, #087cba);
+  color: white;
+  font-weight: bold;
+  font-size: 17px;
+  box-shadow: 0 0 12px #00d9ff;
+}
+
+#start {
+  background: linear-gradient(45deg, #00b85a, #00e676);
+  color: #061b10;
+  border-color: #7dffb0;
+}
+
+.star {
+  filter: drop-shadow(0 0 8px gold);
+}
+#message {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffe45c;
+  text-shadow: 0 0 12px gold;
+  animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px gold;
+  }
+  to {
+    text-shadow: 0 0 20px orange;
+  }
+}
+
+.celebration {
+  font-size: 35px;
+  animation: celebrate 1s infinite alternate;
+}
+
+@keyframes celebrate {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.3);
+  }
+}
+#message {
+  display: none;
+}
+
+.celebration {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(2, 5, 30, 0.65);
+  backdrop-filter: blur(5px);
+}
+
+.celebration.hidden {
+  display: none;
+}
+
+.celebration-box {
+  text-align: center;
+  padding: 25px;
+  border: 2px solid #00eaff;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #102b70, #35106d);
+  color: white;
+  box-shadow: 0 0 30px #00dfff;
+  animation: popIn 0.5s ease;
+}
+
+.celebration-box h1 {
+  color: gold;
+  text-shadow: 0 0 15px gold;
+}
+
+#finalScore {
+  font-size: 45px;
+  color: #00ffcc;
+  font-weight: bold;
+}
+
+.confetti,
+.celebration-stars {
+  font-size: 27px;
+  margin: 15px;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+#game {
+  position: relative;
+  overflow: hidden;
+}
+
+#message.game-over-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  padding: 20px;
+  background: rgba(5, 10, 45, 0.96);
+  border: 2px solid gold;
+  border-radius: 18px;
+  color: white;
+  text-align: center;
+  z-index: 100;
+  box-shadow: 0 0 25px gold;
+  animation: none;
+}
+
+#message.game-over-message h2 {
+  color: gold;
+  font-size: 28px;
+}
+
+#message.game-over-message .celebration {
+  font-size: 40px;
+}
+#message.game-over-message {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: none;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 20, 0.55);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  animation: none;
+  text-shadow: none;
+}
+
+.celebration-card {
+  width: 85%;
+  max-width: 350px;
+  padding: 25px 15px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(145deg, #101b59, #521078);
+  border: 2px solid gold;
+  border-radius: 25px;
+  box-shadow: 0 0 30px gold;
+}
+
+.celebration-card .celebration {
+  font-size: 45px;
+}
+
+.celebration-card h2 {
+  color: gold;
+  font-size: 30px;
+  margin: 12px 0;
+}
+
+.celebration-card h3 {
+  color: #00eaff;
+  font-size: 22px;
+}
+
+.celebration-card p {
+  font-size: 17px;
+}
+
+.final-score {
+  font-size: 48px;
+  font-weight: bold;
+  color: #00ffcc;
+  margin: 10px;
+}
+
+#playAgainOverlay {
+  margin-top: 15px;
+  padding: 14px 25px;
+  background: linear-gradient(135deg, #00a878, #00c8d7);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+}
+/* FULL SCREEN BLUR BACKGROUND */
+
+#message.game-over-message {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 0, 20, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  transform: none;
+  animation: none;
+  padding: 15px;
+}
+
+/* CELEBRATION CARD */
+
+.celebration-card {
+  width: 90%;
+  max-width: 350px;
+  padding: 25px 15px;
+
+  background: linear-gradient(145deg, #101b59, #521078);
+  border: 3px solid gold;
+  border-radius: 25px;
+
+  color: white;
+  text-align: center;
+
+  box-shadow:
+    0 0 15px gold,
+    0 0 35px #00eaff;
+
+  animation: celebrationPop 0.5s ease;
+}
+
+.celebration-card .celebration {
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+.celebration-card h2 {
+  color: gold;
+  font-size: 30px;
+  margin: 10px;
+}
+
+.celebration-card h3 {
+  color: #00eaff;
+  font-size: 23px;
+  margin: 10px;
+}
+
+.celebration-card p {
+  font-size: 17px;
+  color: white;
+}
+
+.celebration-card .final-score {
+  font-size: 52px;
+  font-weight: bold;
+  color: #00ffcc;
+  margin: 12px;
+  text-shadow: 0 0 15px #00ffcc;
+}
+
+/* PLAY AGAIN BUTTON */
+
+#playAgainOverlay {
+  display: block;
+  width: 85%;
+  margin: 20px auto 0;
+  padding: 14px;
+
+  background: linear-gradient(135deg, #00a878, #00c8d7);
+  color: white;
+
+  border: 2px solid white;
+  border-radius: 14px;
+
+  font-size: 18px;
+  font-weight: bold;
+}
+
+@keyframes celebrationPop {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.celebration.hidden {
+  display: none !important;
+}
+
+.celebration:not(.hidden) {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 20, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 15px;
+}
+
+.celebration-box {
+  width: 90%;
+  max-width: 350px;
+  padding: 25px 15px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(145deg, #101b59, #521078);
+  border: 3px solid gold;
+  border-radius: 25px;
+  box-shadow: 0 0 25px gold, 0 0 35px #00eaff;
+}
+
+#finalScore {
+  font-size: 50px;
+  font-weight: bold;
+  color: #00ffcc;
+}
+#game {
+  position: relative;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute !important;
+  display: block;
+  transform: none !important;
+  animation: none !important;
+  z-index: 5;
+  font-size: 25px;
+}
+#playAgainBtn {
+  margin-top: 15px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: gold;
+  color: #111;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#game {
+  touch-action: none;
+}
+
+#basket {
+  touch-action: none;
+  cursor: grab;
+}
+.sun {
+  position: absolute;
+  font-size: 28px;
+  filter: drop-shadow(0 0 8px orange);
+  z-index: 6;
+  pointer-events: none;
+}

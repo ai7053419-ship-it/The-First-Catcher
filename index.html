@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+<title>The First Catcher</title>
+</head>
+<body>
+
+  <h1>⭐ Catch The Stars ⭐</h1>
+
+  <div id="info">
+    <p id="best">🏆 Best Score: 0</p>
+    <span>Score: <b id="score">0</b></span>
+    <span>Time: <b id="time">30</b></span>
+    <span>❤️ Lives: <b id="lives">3</b></span>
+  </div>
+
+  <div id="game">
+    <div id="basket">🧺</div>
+    <div id="message">Catch the falling stars!</div>
+  </div>
+
+  <button id="start">START GAME</button>
+  <button id="soundBtn">🔊 SOUND ON</button>
+  <div id="celebration" class="celebration hidden">
+  <div class="celebration-box">
+    <div class="confetti">🎉 ⭐ 🎊 ⭐ 🎉</div>
+    <h1>🏆 AMAZING!</h1>
+    <h2>GAME OVER</h2>
+    <p>Your Score</p>
+    <div id="finalScore">0</div>
+    <button id="playAgainBtn" onclick="startGame()">
+  🔄 PLAY AGAIN
+    </button>
+    <p>Keep going! You're a Star Catcher!</p>
+    <div class="celebration-stars">🌟 ✨ 🌟</div>
+  </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
